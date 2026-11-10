@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#f2ecdc"/>
+  <!-- Key ring at top center -->
+  <g fill="#173049">
+    <circle cx="256" cy="128" r="56"/>
+    <circle cx="256" cy="128" r="24" fill="#f2ecdc"/>
+    <!-- Shaft down -->
+    <rect x="248" y="176" width="16" height="52"/>
+  </g>
+  <!-- Booking pills below (like calendar rows attached to the key) -->
+  <g>
+    <rect x="72" y="240" width="368" height="52" rx="26" fill="#173049"/>
+    <rect x="128" y="308" width="256" height="52" rx="26" fill="#f4a34c"/>
+    <rect x="88" y="376" width="336" height="52" rx="26" fill="#173049" opacity="0.72"/>
+  </g>
+</svg>

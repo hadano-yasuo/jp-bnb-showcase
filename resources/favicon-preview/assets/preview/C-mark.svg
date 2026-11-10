@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="skyCs" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e3a5f"/>
+      <stop offset="1" stop-color="#3d5a7c"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" ry="96" fill="url(#skyCs)"/>
+  <!-- sun -->
+  <circle cx="380" cy="132" r="52" fill="#e8a04a"/>
+  <!-- Fuji large -->
+  <path d="M 24 460
+           C 108 400, 180 268, 236 108
+           L 276 108
+           C 332 268, 404 400, 488 460 Z"
+        fill="#0b1a2e"/>
+  <!-- snow cap (simplified 3-notch) -->
+  <path d="M 200 208
+           L 236 108 L 276 108 L 312 208
+           L 292 194 L 268 214 L 244 194 L 220 214 Z"
+        fill="#f7f3e8"/>
+</svg>

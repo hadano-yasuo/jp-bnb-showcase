@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" ry="112" fill="#0b1a28"/>
+  <mask id="crescent">
+    <rect width="512" height="512" fill="black"/>
+    <circle cx="256" cy="216" r="94" fill="white"/>
+    <circle cx="290" cy="196" r="82" fill="black"/>
+  </mask>
+  <rect width="512" height="512" fill="#eed7a6" mask="url(#crescent)"/>
+  <line x1="88" y1="360" x2="424" y2="360"
+        stroke="#eed7a6" stroke-width="1"
+        stroke-linecap="round" opacity="0.5"/>
+  <text x="256" y="422"
+        text-anchor="middle" dominant-baseline="central"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="32" letter-spacing="14"
+        fill="#eed7a6">JP-BNB</text>
+</svg>

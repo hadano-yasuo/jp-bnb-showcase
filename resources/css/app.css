@@ -1,0 +1,171 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    /* Admin (Filament / 既存) 用フォント */
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* 公開HP 用フォント（Japandi デザイン、Task #14 で導入）
+       html[lang] セレクタで Blade 側から切替 */
+    --font-serif-jp: 'Noto Serif JP', serif;
+    --font-sans-jp: 'Noto Sans JP', sans-serif;
+    --font-serif-en: 'Playfair Display', serif;
+    --font-sans-en: 'Inter', sans-serif;
+
+    /* 公開HP アクセントカラー（朱色 + 竹緑） */
+    --color-jp-red: #8b1a1a;
+    --color-jp-red-hover: #6f1616;
+    --color-jp-bamboo: #065f46;
+
+    /* 公開HP セクション背景 (stone より少し温かみのある off-white 系) */
+    --color-warm-50: #faf6ee; /* 一番淡いクリーム */
+    --color-warm-100: #f2ead8; /* 少し深い和紙色 */
+    --color-warm-200: #e5d9bf; /* サンド寄り、区切り用 */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Hero 用アニメの utility クラス（Tailwind v4 で animation utility を独自定義） */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-ken-burns {
+    animation: kenBurns 30s ease-in-out infinite alternate;
+}
+
+/* スクロール連動 reveal (resources/js/app.js の IntersectionObserver と連動)
+   [data-reveal] 属性で初期状態を hidden、.revealed 付与で表示状態に。
+   variants: default (up), "left", "right", "scale" */
+[data-reveal] {
+    opacity: 0;
+    transition:
+        opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+[data-reveal]:not([data-reveal='left']):not([data-reveal='right']):not([data-reveal='scale']) {
+    transform: translateY(2.5rem);
+}
+
+[data-reveal='left'] {
+    transform: translateX(-3rem);
+}
+
+[data-reveal='right'] {
+    transform: translateX(3rem);
+}
+
+[data-reveal='scale'] {
+    transform: scale(0.92);
+}
+
+/* 対角方向 (通常セクション用、~3rem のマイルド動き) */
+[data-reveal='up-left'] {
+    transform: translate(-3rem, -3rem);
+}
+[data-reveal='up-right'] {
+    transform: translate(3rem, -3rem);
+}
+[data-reveal='down-left'] {
+    transform: translate(-3rem, 3rem);
+}
+[data-reveal='down-right'] {
+    transform: translate(3rem, 3rem);
+}
+
+/* Hero 専用: 画面外から飛び込む far-* 対角。viewport 単位で確実に画面外へ。 */
+[data-reveal='far-up-left'] {
+    transform: translate(-120vw, -120vh);
+}
+[data-reveal='far-up-right'] {
+    transform: translate(120vw, -120vh);
+}
+[data-reveal='far-down-left'] {
+    transform: translate(-120vw, 120vh);
+}
+[data-reveal='far-down-right'] {
+    transform: translate(120vw, 120vh);
+}
+/* far-* は移動距離が大きいので transition duration を伸ばす */
+[data-reveal^='far-'] {
+    transition:
+        opacity 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal].revealed {
+    opacity: 1;
+    transform: none;
+}
+
+/* 遅延 utility (max 800ms、100ms 刻み) */
+[data-reveal-delay='100'] {
+    transition-delay: 100ms;
+}
+[data-reveal-delay='200'] {
+    transition-delay: 200ms;
+}
+[data-reveal-delay='300'] {
+    transition-delay: 300ms;
+}
+[data-reveal-delay='400'] {
+    transition-delay: 400ms;
+}
+[data-reveal-delay='500'] {
+    transition-delay: 500ms;
+}
+[data-reveal-delay='600'] {
+    transition-delay: 600ms;
+}
+[data-reveal-delay='800'] {
+    transition-delay: 800ms;
+}
+
+/* アンカーリンクのスムーススクロール (公開HP 内 #properties 等) */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 固定ヘッダー (h-16 = 4rem) 分の余白を確保して
+   アンカージャンプ先が header に隠れないように */
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
+/* Prefers-reduced-motion 対応 (アクセシビリティ) */
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .animate-fade-in-up,
+    .animate-ken-burns {
+        animation: none !important;
+    }
+}

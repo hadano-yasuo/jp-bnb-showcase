@@ -1,0 +1,37 @@
+*.log
+.DS_Store
+# .env* を包括的に ignore（平文の秘密流出防止）
+.env
+.env.*
+# 明示的に allow するもの
+!.env.example
+!.env.*.encrypted
+.phpactor.json
+.phpunit.result.cache
+/.claude/settings.local.json
+/.codex
+/.cursor/
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/fonts-manifest.dev.json
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+_ide_helper.php
+Homestead.json
+Homestead.yaml
+Thumbs.db
+
+# 公開HP のローカル画像（本番は R2 配信のため git 管理対象外）
+# 親ディレクトリを ignore するとサブファイル ! 例外が効かないので glob 指定
+public/images/*
+!public/images/.gitkeep
+!public/images/README.md

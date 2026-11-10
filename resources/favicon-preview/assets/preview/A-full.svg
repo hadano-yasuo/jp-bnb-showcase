@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" ry="112" fill="#1a2b48"/>
+  <!-- subtle sun rays (7 short, asymmetric = organic feel) -->
+  <g stroke="#ead9b0" stroke-width="2" stroke-linecap="round" opacity="0.35">
+    <line x1="256" y1="72" x2="256" y2="98"/>
+    <line x1="330" y1="94" x2="318" y2="118"/>
+    <line x1="378" y1="140" x2="358" y2="156"/>
+    <line x1="396" y1="196" x2="372" y2="196"/>
+    <line x1="182" y1="94" x2="194" y2="118"/>
+    <line x1="134" y1="140" x2="154" y2="156"/>
+    <line x1="116" y1="196" x2="140" y2="196"/>
+  </g>
+  <!-- sun disc -->
+  <circle cx="256" cy="196" r="82" fill="#ead9b0"/>
+  <!-- horizon (thin, at wave crown) -->
+  <line x1="80" y1="290" x2="432" y2="290"
+        stroke="#ead9b0" stroke-width="1" opacity="0.3"/>
+  <!-- three seigaiha-inspired waves -->
+  <g fill="none" stroke="#ead9b0" stroke-width="3" stroke-linecap="round">
+    <path d="M 84 328 Q 170 296 256 328 T 428 328"/>
+    <path d="M 84 364 Q 170 332 256 364 T 428 364"/>
+    <path d="M 84 400 Q 170 368 256 400 T 428 400"/>
+  </g>
+  <!-- caption -->
+  <text x="256" y="452"
+        text-anchor="middle" dominant-baseline="central"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="26" letter-spacing="14"
+        fill="#ead9b0" fill-opacity="0.85">JP-BNB</text>
+</svg>

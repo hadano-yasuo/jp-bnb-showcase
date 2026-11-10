@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" ry="112" fill="#f2ebd8"/>
+  <!-- torii (vermilion, geometric traditional) -->
+  <g fill="#b8352e">
+    <!-- kasagi: top beam with subtle overhang -->
+    <path d="M 96 172 L 416 172 L 416 200 L 96 200 Z"/>
+    <!-- shimaki: thin band under kasagi -->
+    <rect x="118" y="204" width="276" height="9"/>
+    <!-- nuki: middle beam -->
+    <rect x="150" y="234" width="212" height="16"/>
+    <!-- left pillar (tapered wider at base) -->
+    <path d="M 174 215 L 198 215 L 202 380 L 168 380 Z"/>
+    <!-- right pillar -->
+    <path d="M 314 215 L 338 215 L 344 380 L 310 380 Z"/>
+  </g>
+  <!-- fine horizon line (ground) -->
+  <line x1="84" y1="380" x2="428" y2="380"
+        stroke="#1c1c1c" stroke-width="1" opacity="0.28"/>
+  <!-- caption -->
+  <text x="256" y="426"
+        text-anchor="middle" dominant-baseline="central"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="30" letter-spacing="14"
+        fill="#1c1c1c" fill-opacity="0.72">JP-BNB</text>
+</svg>
